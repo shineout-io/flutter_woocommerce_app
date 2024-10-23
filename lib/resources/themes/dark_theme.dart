@@ -64,7 +64,7 @@ ThemeData darkTheme(ColorStyles darkColors) {
     ),
     textTheme: darkTheme,
     colorScheme: ColorScheme.dark(
-        background: darkColors.background, primary: darkColors.primaryContent),
+        surface: darkColors.background, primary: darkColors.primaryContent),
   );
 }
 

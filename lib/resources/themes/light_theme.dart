@@ -67,7 +67,7 @@ ThemeData lightTheme(ColorStyles lightColors) {
     ),
     textTheme: lightTheme,
     colorScheme: ColorScheme.light(
-        background: lightColors.background,
+        surface: lightColors.background,
         primary: lightColors.primaryContent),
   );
 }
