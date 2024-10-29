@@ -19,6 +19,7 @@ import '/resources/pages/wishlist_page_widget.dart';
 import '/resources/pages/home_search_page.dart';
 import '/resources/widgets/app_loader_widget.dart';
 import '/resources/widgets/compo_home_widget.dart';
+import '/resources/widgets/compo_chat_widget.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 import 'package:woosignal/models/response/woosignal_app.dart';
 
@@ -91,6 +92,16 @@ class CompoThemeWidgetState extends State<CompoThemeWidget> {
       BottomNavItem(
           id: 2,
           bottomNavigationBarItem: BottomNavigationBarItem(
+            icon: Icon(Icons.chat),
+            label: 'Assistant'.tr(),
+          ),
+          tabWidget: CompoChatWidget(wooSignalApp: widget.wooSignalApp)),
+    );
+
+    items.add(
+      BottomNavItem(
+          id: 3,
+          bottomNavigationBarItem: BottomNavigationBarItem(
             icon: Icon(Icons.search),
             label: 'Search'.tr(),
           ),
@@ -99,7 +110,7 @@ class CompoThemeWidgetState extends State<CompoThemeWidget> {
 
     if (AppHelper.instance.appConfig!.wishlistEnabled == true) {
       items.add(BottomNavItem(
-        id: 3,
+        id: 4,
         bottomNavigationBarItem: BottomNavigationBarItem(
           icon: Icon(Icons.favorite_border),
           label: 'Wishlist'.tr(),
@@ -109,7 +120,7 @@ class CompoThemeWidgetState extends State<CompoThemeWidget> {
     }
 
     items.add(BottomNavItem(
-      id: 4,
+      id: 5,
       bottomNavigationBarItem: BottomNavigationBarItem(
           icon: Icon(Icons.shopping_cart), label: 'Cart'.tr()),
       tabWidget: CartPage(),
@@ -117,7 +128,7 @@ class CompoThemeWidgetState extends State<CompoThemeWidget> {
 
     if (AppHelper.instance.appConfig!.wpLoginEnabled == 1) {
       items.add(BottomNavItem(
-        id: 5,
+        id: 6,
         bottomNavigationBarItem: BottomNavigationBarItem(
             icon: Icon(Icons.person), label: 'Account'.tr()),
         tabWidget: (await WPJsonAPI.wpUserLoggedIn())
